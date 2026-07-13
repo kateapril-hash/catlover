@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Lovers Club</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f2;
+}
+
+/* Header */
+
+header{
+    background:#ff914d;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    list-style:none;
+    gap:10px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    background:#ffb26b;
+    padding:10px 18px;
+    border-radius:20px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    background:#ff7b29;
+}
+
+/* Banner */
+
+.banner{
+    width:90%;
+    max-width:1000px;
+    height:420px;
+    margin:25px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,.5);
+    color:white;
+    font-size:30px;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:50%;
+    user-select:none;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+/* Pages */
+
+.page{
+    display:none;
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    min-height:350px;
+}
+
+.page.active{
+    display:block;
+}
+
+.page h2{
+    color:#ff7b29;
+    margin-bottom:15px;
+}
+
+.page p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+<ul>
+<li><a href="#" onclick="showPage('home')">Home</a></li>
+<li><a href="#" onclick="showPage('page1')">Cat Breeds</a></li>
+<li><a href="#" onclick="showPage('page2')">Cat Care</a></li>
+<li><a href="#" onclick="showPage('page3')">Fun Facts</a></li>
+<li><a href="#" onclick="showPage('page4')">Gallery</a></li>
+<li><a href="#" onclick="showPage('about')">About</a></li>
+</ul>
+</nav>
+
+</header>
+
+<!-- Banner -->
+
+<div class="banner">
+
+<img id="slider" src="https://images5.alphacoders.com/879/879772.jpg">
+
+<div class="prev" onclick="previousSlide()">&#10094;</div>
+
+<div class="next" onclick="nextSlide()">&#10095;</div>
+
+</div>
+
+<!-- HOME -->
+
+<div class="page active" id="home">
+
+<h2>🐱 Welcome to Cat Lovers Club</h2>
+
+<p>
+Welcome to Cat Lovers Club! This website is dedicated to everyone who loves cats. Whether you have one cat or many, you'll find interesting information and adorable cat photos here.
+</p>
+
+<p>
+Cats are playful, intelligent, and loving companions. Explore this website to discover different cat breeds, learn how to care for your pet, read fun facts, and enjoy our cat gallery.
+</p>
+
+</div>
+
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<h2>🐈 Popular Cat Breeds</h2>
+
+<p>
+There are hundreds of cat breeds around the world, each with unique personalities and appearances.
+</p>
+
+<p>
+Some popular breeds include the Persian, Siamese, Maine Coon, Ragdoll, British Shorthair, Bengal, and Scottish Fold. Some are energetic and playful, while others enjoy relaxing beside their owners.
+</p>
+ <img src="https://img.freepik.com/premium-vector/set-cute-cat-breeds-fun-cartoon-style-vector-illustrations_167235-1334.jpg?w=740.jpg" width="300">
+ <img src="https://i.etsystatic.com/44801923/r/il/d3797f/5163140500/il_794xN.5163140500_vayf.jpg" width="300">
+</div>
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<h2>🐾 Cat Care Tips</h2>
+
+<p>
+Taking care of a cat is both fun and rewarding. Cats need nutritious food, fresh water, and a clean environment to stay healthy and happy.
+</p>
+
+<p>
+Remember to clean the litter box regularly, brush your cat's fur, provide toys for exercise, and schedule routine veterinary checkups. Giving your cat love and attention every day helps strengthen your bond.
+</p>
+<img src="https://i.pinimg.com/originals/a1/f9/35/a1f9351ff184bd06bcb7074b2effe43b.jpg"width="300">
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h2>😺 Fun Cat Facts</h2>
+
+<p>
+Did you know that cats sleep between 12 and 16 hours a day? They are excellent hunters with amazing night vision and can hear sounds that humans cannot.
+</p>
+
+<p>
+A cat's whiskers help it measure spaces, and each cat has a unique nose print—just like a human fingerprint!
+</p>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h2>📸 Cat Gallery</h2>
+
+<p>
+Below are some suggested images you can use for your slideshow and gallery.
+</p>
+
+<ul style="margin-left:25px; line-height:2;">
+<li>🐱 Cute Kitten</li>
+<img src="https://th.bing.com/th/id/OIP.fKj_qb_BHD81-cnC4aE63QHaHa?w=189&h=187&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<img src="https://th.bing.com/th/id/OIP.jYm6ylurmjJZz6VKYqyiXwHaFS?w=245&h=180&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<li>🐈 Persian Cat</li>
+<img src="https://th.bing.com/th/id/OIP.IGUFo6gWNroQShpjd7bp5QHaFw?w=238&h=185&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<img src="https://th.bing.com/th/id/OIP.NCVXIYN1OtM3578VT4qhTAHaEv?w=289&h=185&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<li>🐈‍⬛ Black Cat</li>
+<img src="https://th.bing.com/th/id/OIP.rReqYk3RHuu_9dcnAk3tnQHaE1?w=295&h=193&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<img src="https://tse2.mm.bing.net/th/id/OIP.DSjc_XyGKvr-095mwh_3jQHaFj?r=0&w=1200&h=900&rs=1&pid=ImgDetMain&o=7&rm=3"width="300">
+<li>😺 Sleeping Cat</li>
+<img src="https://th.bing.com/th/id/OIP.vmqYSaY0YOsVMcpkWETYqwHaEJ?w=303&h=180&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+<img src="https://th.bing.com/th/id/OIP.S9ACVpF5wdpaffv4hEu8nAHaE7?w=336&h=183&c=7&r=0&o=7&pid=1.7&rm=3"width="300">
+<li>🐾 Playful Cat</li>
+<img src="https://www.barkleyandpaws.com/wp-content/uploads/2025/01/cats_playing_with_cat_toys.jpg"width="300">
+<img src="https://th.bing.com/th/id/OIP.3JW14G3RJz4aXTtMXtyITQHaE7?w=260&h=180&c=7&r=0&o=7&pid=1.7&rm=3.jpg"width="300">
+</ul>
+
+
+</div>
+
+<!-- ABOUT -->
+
+<div class="page" id="about">
+
+<h2>❤️ About Cat Lovers Club</h2>
+
+<p>
+Cat Lovers Club is a simple website created for cat lovers. Its purpose is to share information about cats, educate visitors about proper pet care, and celebrate our love for these wonderful animals.
+</p>
+
+<p>
+Thank you for visiting! We hope you enjoy learning more about cats.
+</p>
+
+</div>
+
+<footer>
+
+<p>&copy; <span id="year"></span> Cat Lovers Club | All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+// Update Footer Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Navigation
+function showPage(id){
+
+let pages=document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+// Image Slider
+
+let images=[
+"https://tse1.explicit.bing.net/th/id/OIP.g3YfWzhrbZQliGgYCXvAmAHaHa?r=0&w=1068&h=1068&rs=1&pid=ImgDetMain&o=7&rm=3.jpg",
+"https://th.bing.com/th/id/OIP.f7w9Y4nVnuBH6ECGUegzXAHaFS?w=278&h=199&c=7&r=0&o=7&pid=1.7&rm=3.jpg",
+"https://tse1.explicit.bing.net/th/id/OIP.V0maTquafh1lrB-C1IuvLAHaH8?r=0&w=728&h=781&rs=1&pid=ImgDetMain&o=7&rm=3.jpg",
+"https://wallpapers.com/images/hd/cute-and-happy-funny-cat-1qodhaitzyv6w5gf.jpg",
+"https://wallpapers.com/images/hd/funny-cat-memes-pictures-d8lv0mys8gq9qnwd.jpg"
+];
+
+let current=0;
+
+function showSlide(){
+document.getElementById("slider").src=images[current];
+}
+
+function nextSlide(){
+
+current++;
+
+if(current>=images.length){
+current=0;
+}
+
+showSlide();
+
+}
+
+function previousSlide(){
+
+current--;
+
+if(current<0){
+current=images.length-1;
+}
+
+showSlide();
+
+}
+
+// Automatically change image every 3 seconds
+setInterval(nextSlide,3000);
+
+</script>
+
+</body>
+</html>
